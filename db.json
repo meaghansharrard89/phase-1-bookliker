@@ -1,6 +1,14 @@
 {
   "books": [
     {
+      "0": {
+        "id": 2,
+        "username": "auer"
+      },
+      "1": {
+        "id": 8,
+        "username": "maverick"
+      },
       "id": 1,
       "title": "Grapefruit",
       "subtitle": "A book of Instruction and Drawings.",
@@ -108,16 +116,7 @@
       "description": "Marriage of a Thousand Lies follows Lucky and her husband, Krishna, both of whom are gay and lying to their Sri Lankan families about it.  When circumstances cause Lucky to return back to her childhood home, Lucky asks herself what she is willing to walk away from when she rekindles love for her first friend.",
       "author": "S.J. Sindu",
       "img_url": "https://books.google.com/books/content?id=54vbDgAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&source=gbs_api",
-      "users": [
-        {
-          "id": 7,
-          "username": "steuber"
-        },
-        {
-          "id": 4,
-          "username": "ann"
-        }
-      ]
+      "users": "book.username"
     },
     {
       "id": 7,

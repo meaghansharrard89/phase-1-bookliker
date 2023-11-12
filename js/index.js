@@ -16,12 +16,12 @@ function loopThroughBooks(book){
 }
 
 function displayBookTitles(book){
-    const newList = document.createElement('li')
-    const list = document.getElementById('list-panel')
-    newList.innerHTML = book.title
-    list.append(newList)
+    const newListItem = document.createElement('li')
+    const existingList = document.getElementById('list-panel')
+    newListItem.innerHTML = book.title
+    existingList.append(newListItem)
 
-    newList.addEventListener('click', () => {
+    newListItem.addEventListener('click', () => {
         addNewBook(book.id)
     })
 }
@@ -37,10 +37,8 @@ function displayBookInfo(book){
     const users = book.users
     const button = document.createElement('button')
     let userList = ''
-    let userArray = []
     users.forEach(book => {
         userList += `<li>${book.username}</li>`
-        userArray.push(book.username)
     })
 
     showList.innerHTML = `
@@ -69,13 +67,20 @@ function displayBookInfo(book){
 
 //not sending PATCH correctly
 function sendPatch(book){
+    const newUser = {
+        id: book.id,
+        username: "meaghan"
+    }
         fetch(`http://localhost:3000/books/${book.id}`, {
             method: 'PATCH',
             headers:{
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
-                users: book.username
+                users: [
+                ...book.users,
+                newUser
+            ]
             })
         })
         .then(res => res.json())
